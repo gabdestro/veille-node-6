@@ -1,0 +1,34 @@
+<table class="tableau">
+<br>
+<br>
+
+<% let noligne = 0 %>
+<% for(elm of adresses) {%>
+	<% if (noligne==0) {%>
+		<tr>	
+			 <% for (p in elm) {%>
+			 <td><%= p %></td>
+			 <% } %>
+		</tr>
+ 	<% } %>
+	<% noligne++ %>
+	
+	<tr>
+		<% for(p in elm) {%>
+	 	<td><%= elm[p] %></td>
+	 	<% } %>
+	</tr>
+	<% } %>
+
+ </table>
+
+ 	<ul class="adresse">
+ 	<% for(adr of adresses) {%>
+ 		<li class="client">
+ 			<span> - <%= adr._id %></span>
+ 		<a href=http://localhost:8081/detruire/<%= adr._id %> > Détruire </a>
+ 		</li>	
+	<% } %>
+ </ul>
+
+ 

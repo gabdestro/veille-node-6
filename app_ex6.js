@@ -4,11 +4,12 @@ app.use(express.static("public"));
 
 const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient
-
-
+const ObjectID = require('mongodb').ObjectID;
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs'); // générateur de template 
 	
+
+
 app.get('/', (req, res) => {
 	console.log('la route route get / = ' + req.url)
  
@@ -38,8 +39,25 @@ MongoClient.connect('mongodb://127.0.0.1:27017/carnet_adresse', (err, database) 
 
 app.post('/ajouter', (req, res) => {
  db.collection('adresse').save(req.body, (err, result) => {
- if (err) return console.log(err)
- console.log('sauvegarder dans la BD')
- res.redirect('/')
+	 if (err) return console.log(err)
+		 console.log('sauvegarder dans la BD')
+		 res.redirect('/')
+	 })
+})
+
+
+app.get('/detruire/:id', (req, res) => {
+let id = req.params.id;
+let critere = ObjectID(req.params.id);
+
+console.log(critere)
+
+console.log(id)
+ db.collection('adresse').findOneAndDelete({"_id": critere}, (err, resultat) => {
+
+if (err) return console.log(err)
+ 	res.render('index.ejs', {adresses: resultat})
+  res.redirect('/')
  })
 })
+
