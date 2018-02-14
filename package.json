@@ -1,0 +1,33 @@
+{
+  "name": "veille-node-6",
+  "version": "1.0.0",
+  "description": "ex6",
+  "main": "app_ex6.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabdestro/veille-node-6.git"
+  },
+  "keywords": [
+    "\"\"\u001b[B\u001b[Dexpress\u001b[C\u001b[D\"",
+    "\"\"\u001b[Dfor_of\"",
+    "\"for_in\"",
+    "\"route\"",
+    "\"formulaire\""
+  ],
+  "author": "gabriel armstrong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabdestro/veille-node-6/issues"
+  },
+  "homepage": "https://github.com/gabdestro/veille-node-6#readme"
+}
