@@ -1,0 +1,10 @@
+<ul class="adresse">
+
+ 	<% for(adr of adresses) {%>
+ 		<li class="client">
+
+ 			<span> - <%= adr["_id"] %></span>
+ 			<a href=http://localhost:8081/detruire/<%= adr["_id"] %> > Détruire </a>
+ 		</li>	
+	<% } %>
+</ul>

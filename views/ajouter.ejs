@@ -1,0 +1,48 @@
+<form action="/modifier" method="POST">
+<table class="tableau" >
+
+<br>
+<br>
+
+<% let noligne = 0 %>
+<% let noligne2 = 0 %>
+
+	<% for(elm of adresses) {%>
+		<% if (noligne==0) {%>
+		<tr>	
+			 <% for (p in elm) {%>
+			 
+			 	<td> <a href=http://localhost:8081/trier/>
+			 		<%= p %>
+			 		  </a>	
+			 	</td>
+			
+			 <% } %>
+		</tr>
+ 		<% } %>
+		
+		<% noligne++ %>
+	
+		<tr>
+			<% for(p in elm) {%>
+				<% if (noligne2==0) {%>
+			 		<td >
+			 			<%= elm[p] %>
+			 		</td><% noligne2++ %>
+	 			 <% } %>
+	 		
+	 			<% if (noligne2>0) {%>
+					<td contenteditable="true">
+			 			<%= elm[p] %>
+			 		</td>
+	 			<% } %>
+			<% } %>
+
+		</tr>
+	<% } %>
+
+ </table>
+
+
+	
+</form>
