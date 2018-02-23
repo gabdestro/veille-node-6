@@ -15,7 +15,7 @@ app.get('/', (req, res) => {console.log('la route route get / = ' + req.url)
 	let cursor = db.collection('adresse').find().toArray((err, resultat)=>{
  	if (err) return console.log(err)
  		//console.log(resultat)
- 		 res.render('index.ejs', {adresses: resultat})
+ 		 res.render('index.ejs', {adresses: resultat, cle:"" ,ordre:"asc" })
 
   	}) 
 })	
@@ -58,7 +58,7 @@ let critere = ObjectID(req.params.id);//console.log(critere)console.log(id)
 
 
 
-app.get('/trier/:cle/:ordre', (req, res) => {
+app.get('/trier-:cle-:ordre', (req, res) => {
 
 	let cle = req.params.cle;
 	let ordre = (req.params.ordre == 'asc' ? 1 : -1);

@@ -6,13 +6,14 @@
 
 <% let noligne = 0 %>
 <% let noligne2 = 0 %>
+<% let modLigne2 = noligne2%4 %>
 
 	<% for(elm of adresses) {%>
 		<% if (noligne==0) {%>
 		<tr>	
 			 <% for (p in elm) {%>
 			 
-			 	<td> <a href=http://localhost:8081/trier/>
+			 	<td> <a href="http://localhost:8081/trier-<%= p %>-<%= ordre%>">
 			 		<%= p %>
 			 		  </a>	
 			 	</td>
@@ -25,19 +26,20 @@
 	
 		<tr>
 			<% for(p in elm) {%>
-				<% if (noligne2==0) {%>
-			 		<td >
-			 			<%= elm[p] %>
-			 		</td><% noligne2++ %>
-	 			 <% } %>
+
 	 		
-	 			<% if (noligne2>0) {%>
-					<td contenteditable="true">
+	 			
+					<td <% if (p!="_id") {%>contenteditable="true"<% } %>>
 			 			<%= elm[p] %>
 			 		</td>
-	 			<% } %>
+
+
 			<% } %>
 
+	 					
+	 					<td><a href=http://localhost:8081/detruire/<%= elm["_id"] %> > Détruire </a></td>
+
+	 				
 		</tr>
 	<% } %>
 
@@ -46,3 +48,4 @@
 
 	
 </form>
+			
